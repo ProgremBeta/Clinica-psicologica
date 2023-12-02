@@ -5,6 +5,7 @@
 #define LIMPIAR system("cls")
 #define PRESIONAR printf("\n    Presiona ENTER para continuar"); getchar();
 #define SALTARLINEA(N) {for(int i=0; i<N; i++) printf("\n");}
+#define SALTARLINEAA(N) {for(int i=0; i<N; i++) fprintf("\n");}
 
 struct FechaNacimiento {
     int dia;
@@ -66,7 +67,7 @@ Paciente pedirDatosPaciente() {
     scanf("%d", &nuevoPaciente.fecha.dia);
     printf("    Mes: ");
     scanf("%d", &nuevoPaciente.fecha.mes);
-    printf("    Año: ");
+    printf("    AÃ±o: ");
     scanf("%d", &nuevoPaciente.fecha.year);
 
     printf("    Ingresa motivo de consulta del paciente: ");
@@ -104,19 +105,19 @@ void escribirEnArchivo(Paciente paciente) {
     }
 
     fprintf(archivo, "Nombre: %s %s\n", paciente.nombre, paciente.apellido);
-    SALTARLINEA(1);
+    SALTARLINEAA(1)
     fprintf(archivo, "Edad: %d", paciente.edad);
-    SALTARLINEA(1);
+    SALTARLINEAA(1);
     fprintf(archivo, "Fecha de nacimiento: %d-%d-%d\n", paciente.fecha.dia, paciente.fecha.mes, paciente.fecha.year);
-    SALTARLINEA(1);
+    SALTARLINEAA(1);
     fprintf(archivo, "Trastorno: %s\n", paciente.historial.trastorno);
-    SALTARLINEA(1);
+    SALTARLINEAA(1);
     fprintf(archivo, "Antecedentes Familiares: %s\n", paciente.historial.antecedentesFamiliares);
-    SALTARLINEA(1);
+    SALTARLINEAA(1);
     fprintf(archivo, "Motivo de Consulta: %s\n", paciente.historial.consulta);
-    SALTARLINEA(1);
+    SALTARLINEAA(1);
     fprintf(archivo, "Descripcion: %s\n", paciente.historial.descripcion);
-    SALTARLINEA(1);
+    SALTARLINEAA(1);
 
     fclose(archivo);
 
